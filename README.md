@@ -33,7 +33,26 @@ The first thing you are going to want to do is set up a Microsoft Azure account.
 
 <h2>Setting up Log Analytics Workspace</h2>
 <br />
-Once the VM is set up, search "Log Analytics Workspace" and create a new one. Add it to your current resource group and create it. Next, search "Azure Sentinal" and enable it to allow the SIEM to collect logs and analyze them. It will ask you if you want what you want to log, and you only want "Servers" to be on, turn off "SQL Servers"
+Once the VM is set up, search "Log Analytics Workspace" and create a new one. Add it to your current resource group and create it. Next, search "Azure Sentinal" and enable it to allow the SIEM to collect logs and analyze them. It will ask you if you want what you want to log, and you only want "Servers" to be on, turn off "SQL Servers". Once that's done, navigate back the "Log Analytics Workspace" and select the one you created. Go to Virtual Machines within that LAW and select your VM and Connect it to your LAW. 
+
+<h2>Accessing the VM</h2>
+<br />
+Open up RDP and type in the public IP Address that has been assigned to your VM and authenticate into it. Navigate to "Windows Defender Firewall" and go to advanced settings. Turn off the Firewall for your Domain Profile, Private Profile, and Public Profile. 
+<br />
+<br />
+
+
+<p align="center">
+<img src="https://imgur.com/X3qzsXS.png" height="85%" width="85%" alt="Firewall Settings"/>
+</p>
+<br />
+
+*This will allow attackers to remote into your VM and attempt to authenticate. Also, go ahead and disconnect from the VM and attempt to authenticate with bogus credentials so that the VM can build up some failed login attempts for Event Viewer to log.
+<br />
+
+
+
+<h2>Languages Used</h2>
 
 <p align="center">
 <img src="https://imgur.com/iZjOmRr.png" height="85%" width="85%" alt="RDP event fail logs to iP Geographic information"/>
@@ -44,13 +63,18 @@ Once the VM is set up, search "Log Analytics Workspace" and create a new one. Ad
 
 <h2>Utilities Used</h2>
 
-- <b>ipgeolocation.io:</b> IP Address to Geolocation API
+- <b>ipgeolocation.io:</b> IP Address to Geolocation API. Create an account in [IP Geolocation](https://ipgeolocation.io/). This will allow you to have an API key that you will need to swap out for mine in the [Powershell Script]() in the repository.
 
-<h2>Attacks from China coming in; Custom logs being output with geodata</h2>
+<h2>Custom logs being output with geodata</h2>
 
 <p align="center">
 <img src="https://imgur.com/jrf3M2u.png" height="85%" width="85%" alt="Image Analysis Dataflow"/>
 </p>
+
+<br />
+<br />
+
+
 
 <h2>World map of incoming attacks after 24 hours (built custom logs including geodata)</h2>
 
