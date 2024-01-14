@@ -57,13 +57,10 @@ Open up RDP and type in the public IP Address that has been assigned to your VM 
 <p align="center">
 <img src="https://imgur.com/iZjOmRr.png" height="85%" width="85%" alt="RDP event fail logs to iP Geographic information"/>
 </p>
-<h2>Languages Used</h2>
 
-- <b>PowerShell:</b> Extract RDP failed logon logs from Windows Event Viewer 
-
-<h2>Utilities Used</h2>
-
-- <b>ipgeolocation.io:</b> IP Address to Geolocation API. Create an account in [IP Geolocation](https://ipgeolocation.io/). This will allow you to have an API key that you will need to swap out for mine in the [Powershell Script]() in the repository.
+<br />
+<br />
+<br />
 
 <h2>Custom logs being output with geodata</h2>
 
@@ -75,6 +72,47 @@ Open up RDP and type in the public IP Address that has been assigned to your VM 
 <br />
 
 
+<h2>Languages Used</h2>
+
+- <b>PowerShell:</b> Extract RDP failed logon logs from Windows Event Viewer 
+
+<h2>Utilities Used</h2>
+
+- <b>ipgeolocation.io:</b> IP Address to Geolocation API. Create an account in [IP Geolocation](https://ipgeolocation.io/). This will allow you to have an API key that you will need to swap out for mine in the [Powershell Script](Security_Log_Exporter.ps1) in my repository. Open up Power Shell in the VM (make sure you are in the VM) and run that script. What this will do is extract all of the failed login attempts and store them in explorer. If you have trouble locating it. Win + R and type in "C:\programdata\failed_rdp.log" and that will bring you to the file.
+
+<h2>How do we get these logs to move over to Azure LAWs?</h2>
+<br />
+
+Copy the data that is located in the "failed_rdp_log" and copy that data to a new notepad or equivalent and save it (make sure you set the view to "status bar"). So next we are going to go back to Azure and navigate to the LAW that was created. Once you are there, go to "Tables" located on the left hand side and create a new "MMA-based" table. Follow the screenshots for how you are going to want to input the data. In the "Record Delimiter" part you should see the data that you copied over to that file you just created. Keep in mind that if you used a different file name then use that instead of what mine is.
+
+<br /"
+<br /"
+
+<p align="center">
+<img src="https://imgur.com/HajCAHQ.png" height="85%" width="85%" alt="Image Analysis Dataflow"/>
+</p>
+
+<br />
+<br />
+
+<p align="center">
+<img src="https://imgur.com/lHCfzUa.png" height="85%" width="85%" alt="Image Analysis Dataflow"/>
+</p>
+
+<br />
+<br />
+
+Name it something like "FAILED_RDP_LOG_CR" and then go ahead and create it when you get to the end.
+
+<br />
+<br />
+
+<h2>Actually seeing some results start to happen</h2>
+
+<br />
+<br />
+
+Now go ahead and go to "Logs" within your LAW once you created the custom log. I'll attach a screenshot of what the query will be in KQL but here is the [script]()
 
 <h2>World map of incoming attacks after 24 hours (built custom logs including geodata)</h2>
 
