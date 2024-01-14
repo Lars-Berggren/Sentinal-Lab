@@ -16,6 +16,25 @@ look up the attackers Geolocation information and plot it on an Azure Sentinel M
 <br />
 <br />
 
+
+<h2>Setting up a Virtual Machine in Microsoft Azure</h2>
+<br />
+The first thing you are going to want to do is set up a Microsoft Azure account. This is pretty simple. Google Microsft Azure, then sign up with them using a microsoft email. Once you have created the account, type into the search bar "Virtual Machine" and click on the Virtual Machine Icon and create a new Azure Virtual Machine. Go with the default or cheapest settings that it has available. When you get to the "Network Security Group" this is where you want to make some changes. A Network Security Group acts as an Access Control List or ACL and this is what we need to allow attackers access to the VM. Create a new "Inbound Security Rule" that will allow any in. Make sure to type a "0 in the Destination Port Ranges and not leave it blank.
+
+<h3>Network Security Group Settings </h2>
+
+<br />
+
+<p align="center">
+<img src="https://imgur.com/ldn4cKT.png" height="85%" width="85%" alt="Network Security Group Settings"/>
+</p>
+
+<br />
+
+<h2>Setting up Log Analytics Workspace</h2>
+<br />
+Once the VM is set up, search "Log Analytics Workspace" and create a new one. Add it to your current resource group and create it. Next, search "Azure Sentinal" and enable it to allow the SIEM to collect logs and analyze them. It will ask you if you want what you want to log, and you only want "Servers" to be on, turn off "SQL Servers"
+
 <p align="center">
 <img src="https://imgur.com/iZjOmRr.png" height="85%" width="85%" alt="RDP event fail logs to iP Geographic information"/>
 </p>
