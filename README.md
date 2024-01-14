@@ -134,7 +134,7 @@ See now we're getting somewhere. Notice the highlighted portion has pulled out t
 <br />
 <br />
 
-Okay now that we've done all that, go ahead and go back to Azure Sentinal and select your LAW. Click on "Workbooks" and add a new workbook. Click "edit" and then "edit" again on the new work book. Use this [script]()
+Okay now that we've done all that, go ahead and go back to Azure Sentinal and select your LAW. Click on "Workbooks" and add a new workbook. Click "edit" and then "edit" again on the new work book. Use this [script](https://github.com/Lars-Berggren/Sentinal-Lab/blob/main/KQL%20Script).
 
 <br />
 <br />
