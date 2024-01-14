@@ -112,7 +112,7 @@ Name it something like "FAILED_RDP_LOG_CR" and then go ahead and create it when 
 <br />
 <br />
 
-Now go ahead and go to "Logs" within your LAW once you created the custom log. I'll attach a screenshot of what the query will be in KQL but here is the [script](https://github.com/Lars-Berggren/Sentinal-Lab/blob/main/KQL%20Script) or just go find it in the repository named "KQL Script". Once you run that you will see something like this:
+Now go ahead and go to "Logs" within your LAW once you created the custom log. I'll attach a screenshot of what the query will be in KQL but here is the [script](https://github.com/Lars-Berggren/Sentinal-Lab/blob/main/LAW%20Query) or just go find it in the repository named "Query Script". Once you run that you will see something like this:
 
 <br />
 <br />
@@ -124,7 +124,9 @@ Now go ahead and go to "Logs" within your LAW once you created the custom log. I
 <br />
 <br />
 
-See now we're getting somewhere. Notice the highlighted portion has pulled out the longitude, latitude, country, etc. What this did is teach Sentinal what to look for when we go to create a "Worksheet" in Sentinal that will give us our data points on a map. Machine learning is kinda cool, right? 
+<b>Please keep in mind that these are real attacks, which in turn means that it can kinda take awhile to pull these logs. It took me personally around a full 24 hours to be able to see some real action. Just be patient it'll happen
+
+See now we're getting somewhere. Notice the highlighted portion has pulled out, or "parsed", the longitude, latitude, country, etc. What this did is teach Sentinal what to look for when we go to create a "Worksheet" in Sentinal that will give us our data points on a map. Machine learning is kinda cool, right? 
 
 <br />
 <br />
@@ -134,15 +136,48 @@ See now we're getting somewhere. Notice the highlighted portion has pulled out t
 <br />
 <br />
 
-Okay now that we've done all that, go ahead and go back to Azure Sentinal and select your LAW. Click on "Workbooks" and add a new workbook. Click "edit" and then "edit" again on the new work book. Use this [script](https://github.com/Lars-Berggren/Sentinal-Lab/blob/main/KQL%20Script).
+Okay now that we've done all that, go ahead and go back to Azure Sentinal and select your LAW. Click on "Workbooks" and add a new workbook. See the screenshot to see how you're going to want to create a new query:
 
 <br />
 <br />
 
+<p align="center">
+<img src="https://imgur.com/xZu63Q1.png" height="85%" width="85%" alt="New Workbook"/>
+</p>
 
+Once you have selected "add query" input this [script](https://github.com/Lars-Berggren/Sentinal-Lab/blob/main/KQL%20Script) into the open box. This is going to let you pull out all of those logs that you were able to get in your LAW with the Query Script and transcribe it into something a little more visually stimulating. This is what you're going to want your settings to look like: 
 
 <br />
 <br />
+
+<p align="center">
+<img src="https://imgur.com/V0dIw9D.png" height="85%" width="85%" alt="Workbook settings"/>
+</p>
+
+<br />
+<br />
+
+Notice the "Map" Selection under "Visualization". Once you "Run Query" you are going to be prompted for some map settings. Here's what those look like:
+
+<br />
+<br />
+
+<p align="center">
+<img src="https://imgur.com/WZ47P3w.png" height="85%" width="85%" alt="Map Settings"/>
+</p>
+
+<br />
+<br />
+
+Once you apply the Settings, go to the top and select "Done Editing"
+
+<br />
+<br />
+
+<h2>CONGRATS!!!</h2>
+<br />
+
+Now you should see something that looks a little like this and all your hard work will finally kinda come to an end as far as this tutorial goes.
 
 <h2>World map of incoming attacks after 24 hours (built custom logs including geodata)</h2>
 
