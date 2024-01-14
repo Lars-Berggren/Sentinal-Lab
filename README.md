@@ -89,14 +89,14 @@ Copy the data that is located in the "failed_rdp_log" and copy that data to a ne
 <br /"
 
 <p align="center">
-<img src="https://imgur.com/HajCAHQ.png" height="85%" width="85%" alt="Image Analysis Dataflow"/>
+<img src="https://imgur.com/HajCAHQ.png" height="85%" width="85%" alt="Custom Log Examle File"/>
 </p>
 
 <br />
 <br />
 
 <p align="center">
-<img src="https://imgur.com/lHCfzUa.png" height="85%" width="85%" alt="Image Analysis Dataflow"/>
+<img src="https://imgur.com/lHCfzUa.png" height="85%" width="85%" alt="Custom Log file path"/>
 </p>
 
 <br />
@@ -112,7 +112,37 @@ Name it something like "FAILED_RDP_LOG_CR" and then go ahead and create it when 
 <br />
 <br />
 
-Now go ahead and go to "Logs" within your LAW once you created the custom log. I'll attach a screenshot of what the query will be in KQL but here is the [script]()
+Now go ahead and go to "Logs" within your LAW once you created the custom log. I'll attach a screenshot of what the query will be in KQL but here is the [script](https://github.com/Lars-Berggren/Sentinal-Lab/blob/main/KQL%20Script) or just go find it in the repository named "KQL Script". Once you run that you will see something like this:
+
+<br />
+<br />
+
+<p align="center">
+<img src="https://imgur.com/etuG0Ti.png" height="85%" width="85%" alt="KQL Script"/>
+</p>
+
+<br />
+<br />
+
+See now we're getting somewhere. Notice the highlighted portion has pulled out the longitude, latitude, country, etc. What this did is teach Sentinal what to look for when we go to create a "Worksheet" in Sentinal that will give us our data points on a map. Machine learning is kinda cool, right? 
+
+<br />
+<br />
+
+<H2>Final Steps in Sentinal</H2>
+
+<br />
+<br />
+
+Okay now that we've done all that, go ahead and go back to Azure Sentinal and select your LAW. Click on "Workbooks" and add a new workbook. Click "edit" and then "edit" again on the new work book. Use this [script]()
+
+<br />
+<br />
+
+
+
+<br />
+<br />
 
 <h2>World map of incoming attacks after 24 hours (built custom logs including geodata)</h2>
 
